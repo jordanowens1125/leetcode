@@ -1,0 +1,18 @@
+var reverseList = function(head) {
+   //the tail will point to null which is why we set prev to null
+   let prev = null
+   let current = head
+   while(current ){
+      //store next now before pointers break link between next node
+      //and the current node
+      const next = current.next
+      //make the current node point to the previous node
+      current.next = prev
+      //move the previous node to current node position
+      prev = current
+      //make the current node equal to the next node
+      current = next 
+   }
+   //return previous as it is now the head node
+   return prev
+};
